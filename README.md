@@ -21,10 +21,10 @@ Prepare Data and Images 📂🖼️
 
     kotlin
 
-├── flashcard_app.py
-└── data
-    ├── unlearned_words.csv
-    └── mandarin_words.csv
+    ├── flashcard_app.py
+    └── data
+        ├── unlearned_words.csv
+        └── mandarin_words.csv
 
 The data directory should contain two CSV files: unlearned_words.csv and mandarin_words.csv.
 Place the front and back images of the flashcards in an images directory located alongside the Python file:
