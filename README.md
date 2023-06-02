@@ -16,7 +16,7 @@ Make sure you have the necessary libraries installed by running the following co
 2. Run the Flashcard Application 🚀
 Open a terminal or command prompt, navigate to the directory where the Python file is located, and run the following command:
 
-        python flashcard_app.py
+        python main.py
 
 3. Start Learning Mandarin! 🏮🌟
 The flashcard application window will appear, displaying a randomly selected Mandarin word.
