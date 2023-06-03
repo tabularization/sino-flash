@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import pandas 
 import random
 
@@ -23,7 +24,7 @@ class FlashcardApp:
         self.flashcard_text = self.flashcard.create_text(400, 270, text=random.choice(self.data)['Mandarin'], font=("Arial", 22, "bold"))
         self.flashcard.grid(column=0, row=0, columnspan=2)
         self.flashcard.bind("<Button-1>", self.flip_flashcard)
-
+        
         check_image = PhotoImage(file="images/check.png")
         self.correct_button = Button(image=check_image, command=self.correct, bg=ORANGE, highlightthickness=0, bd=0, activebackground=ORANGE, highlightbackground=ORANGE)
         self.correct_button.grid(column=1, row=1)
@@ -45,7 +46,10 @@ class FlashcardApp:
         self.update_flashcard()
         self.data.remove(self.random_word)
         unlearned_words = pandas.DataFrame(self.data)
-        unlearned_words.to_csv("data/unlearned_words.csv", index=False)
+        if len(unlearned_words) > 0:
+            unlearned_words.to_csv("data/unlearned_words.csv", index=False)
+        else:
+            messagebox.showinfo(title="Sino Flash", message="You've reviewed all the words.")
 
     def update_flashcard(self):
         self.random_word = random.choice(self.data)
